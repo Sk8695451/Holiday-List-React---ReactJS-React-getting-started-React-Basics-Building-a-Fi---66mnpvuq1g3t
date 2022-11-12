@@ -1,4 +1,3 @@
-
 import React, { Component, useState } from "react";
 import '../styles/App.css';
 
@@ -37,10 +36,23 @@ class App extends Component {
     ]
   }
 
+
+
   render() {
+    let updatedcity = this.cityList.map((element, index) => {
+      if (element.country == "India") {
+
+        return <li key={`location${index + 1}`}>{element.name}</li>
+      }
+    });
+
     return (
       <div id="main">
-        {/* Do not remove the main div */}
+
+        <ol>
+          {updatedcity}
+        </ol>
+
       </div>
     )
   }
